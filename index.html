@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration Form</title>
-    
+    <!-- Bootstraps CSS File link -->
+    <link rel="stylesheet" href="bootstrap-5.3.2/bootstrap.min.css">
     
     <!-- Row CSS File Link -->
     <link rel="stylesheet" href="css/reset.css">
@@ -13,23 +14,26 @@
 </head>
 <body>
    <div class="container">
-    <h1>Student registration form</h1>
+    <h1 class="formTitle text-center text-capitalize mb-4">Student registration form</h1>
 
     <form action="#">
         <label for="name">Name</label>
         <input type="text" id="name" required>
         
-        <label for="name">roll</label>
+        <label for="name">roll Number</label>
         <input type="number" id="roll" required>
         
         <label for="course">course</label>
         <input type="text" id="course" required>
 
-        <button type="button" onclick="addStudent()">Submit</button>
-
+        <div class="d-flex justify-content-between align-items-center pe-5">
+            <button type="button" onclick="addStudent()" id="buttonSubmit">Submit</button>
+            <button type="button" onclick="clearStudent()" id="buttonClear">clear Data</button>
+        </div>
     </form>
 
-    <table>
+    <h2 class="studentInfo text-center mt-5">Information of Registered Student</h2>
+    <table id="studentTable">
         <thead>
             <tr>
                 <th>Name</th>
@@ -37,10 +41,17 @@
                 <th>Course</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <!-- dynamic table data will come here.... -->
+        </tbody>
     </table>
    </div>
 
+
+   <!-- Bootstraps JS File link -->
+   <script src="bootstrap-5.3.2/bootstrap.bundle.min.js"></script>
+
+   <!-- Row JS File link -->
     <script src="js/script.js"></script>
 </body>
 </html>
